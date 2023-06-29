@@ -1,0 +1,5 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/spring-boot-app/my-app', 'target/quizapp-0.0.1-SNAPSHOT.jar']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'gcr.io/spring-boot-app/spring-boot-app']
