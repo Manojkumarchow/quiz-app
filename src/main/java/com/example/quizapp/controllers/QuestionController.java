@@ -22,6 +22,11 @@ public class QuestionController {
     }
 
 
+    @GetMapping("/")
+    public String sayHello() {
+        return "Hello World";
+    }
+
     @GetMapping("allQuestions")
     public ResponseEntity<List<Question>> getQuestions() {
         return questionService.getQuestions();
@@ -36,6 +41,5 @@ public class QuestionController {
     public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
     }
-
 
 }
