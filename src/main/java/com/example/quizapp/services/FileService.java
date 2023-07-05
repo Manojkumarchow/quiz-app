@@ -1,6 +1,8 @@
 package com.example.quizapp.services;
 
+import com.example.quizapp.dao.ColumnHeaderDao;
 import com.example.quizapp.dao.QuestionDao;
+import com.example.quizapp.model.ColumnHeader;
 import com.example.quizapp.model.Question;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -21,8 +23,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FileService {
@@ -31,12 +33,16 @@ public class FileService {
     @Autowired
     private final QuestionDao questionDao;
 
-    @Value("${file.directory}")
-    private String fileDirectory;
+    @Autowired
+    private final ColumnHeaderDao columnHeaderDao;
 
-    public FileService(QuestionDao questionDao) {
+    @Value("${file.directory}")
+    private final String fileDirectory;
+
+    public FileService(QuestionDao questionDao, ColumnHeaderDao columnHeaderDao, String fileDirectory) {
         this.questionDao = questionDao;
-//        this.fileDirectory = fileDirectory;
+        this.columnHeaderDao = columnHeaderDao;
+        this.fileDirectory = fileDirectory;
     }
 
     public ResponseEntity<Resource> downloadExcel() {
@@ -135,17 +141,12 @@ public class FileService {
     }
 
     private List<String> getHeaderValues() {
-        List<String> headers = new ArrayList<>();
-        headers.add("Category");
-        headers.add("Difficulty");
-        headers.add("Question Title");
-        headers.add("Option 1");
-        headers.add("Option 2");
-        headers.add("Option 3");
-        headers.add("Correct Answer");
-
-        return headers;
+        List<ColumnHeader> columns = columnHeaderDao.findAll();
+        return columns.stream()
+                .map(ColumnHeader::getHeaderValue)
+                .collect(Collectors.toList());
     }
+
 
     public ResponseEntity<String> uploadFile(MultipartFile file) {
         if (file.isEmpty()) {
