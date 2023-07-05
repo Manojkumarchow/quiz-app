@@ -3,7 +3,7 @@ package com.example.quizapp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Table(name = "person")
+@Table(name = "persons")
 @Entity
 @Data
 public class Person {
