@@ -1,7 +1,6 @@
 package com.example.quizapp.services;
 
 import com.example.quizapp.dao.RoomDao;
-import com.example.quizapp.model.Person;
 import com.example.quizapp.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,7 +32,6 @@ public class RoomService {
 
     public ResponseEntity<String> createRoom(Room room) {
         try {
-
             if (room.getId() == 0)
                 room.setPersons(null);
             roomDao.save(room);
