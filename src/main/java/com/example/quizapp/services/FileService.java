@@ -37,12 +37,11 @@ public class FileService {
     private final ColumnHeaderDao columnHeaderDao;
 
     @Value("${file.directory}")
-    private final String fileDirectory;
+    private String fileDirectory;
 
-    public FileService(QuestionDao questionDao, ColumnHeaderDao columnHeaderDao, String fileDirectory) {
+    public FileService(QuestionDao questionDao, ColumnHeaderDao columnHeaderDao) {
         this.questionDao = questionDao;
         this.columnHeaderDao = columnHeaderDao;
-        this.fileDirectory = fileDirectory;
     }
 
     public ResponseEntity<Resource> downloadExcel() {
