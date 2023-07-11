@@ -1,10 +1,10 @@
-package com.example.quizapp.services;
+package com.example.dormnestapp.services;
 
-import com.example.quizapp.dao.FeeDao;
-import com.example.quizapp.dao.PersonDao;
-import com.example.quizapp.model.Fee;
-import com.example.quizapp.model.FeeBO;
-import com.example.quizapp.model.Person;
+import com.example.dormnestapp.dao.FeeDao;
+import com.example.dormnestapp.dao.PersonDao;
+import com.example.dormnestapp.model.Fee;
+import com.example.dormnestapp.model.FeeBO;
+import com.example.dormnestapp.model.Person;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;

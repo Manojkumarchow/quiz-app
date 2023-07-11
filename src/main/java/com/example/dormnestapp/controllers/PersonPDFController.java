@@ -1,7 +1,7 @@
-package com.example.quizapp.controllers;
+package com.example.dormnestapp.controllers;
 
-import com.example.quizapp.model.Person;
-import com.example.quizapp.services.PersonService;
+import com.example.dormnestapp.model.Person;
+import com.example.dormnestapp.services.PersonService;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;

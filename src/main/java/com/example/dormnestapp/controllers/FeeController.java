@@ -1,10 +1,10 @@
-package com.example.quizapp.controllers;
+package com.example.dormnestapp.controllers;
 
-import com.example.quizapp.dao.PersonDao;
-import com.example.quizapp.model.Fee;
-import com.example.quizapp.model.FeeBO;
-import com.example.quizapp.services.FeeService;
-import com.example.quizapp.services.PersonService;
+import com.example.dormnestapp.dao.PersonDao;
+import com.example.dormnestapp.model.Fee;
+import com.example.dormnestapp.model.FeeBO;
+import com.example.dormnestapp.services.FeeService;
+import com.example.dormnestapp.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;

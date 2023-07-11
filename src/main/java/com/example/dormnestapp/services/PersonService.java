@@ -1,7 +1,7 @@
-package com.example.quizapp.services;
+package com.example.dormnestapp.services;
 
-import com.example.quizapp.dao.PersonDao;
-import com.example.quizapp.model.Person;
+import com.example.dormnestapp.dao.PersonDao;
+import com.example.dormnestapp.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

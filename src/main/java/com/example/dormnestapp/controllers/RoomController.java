@@ -1,7 +1,7 @@
-package com.example.quizapp.controllers;
+package com.example.dormnestapp.controllers;
 
-import com.example.quizapp.model.Room;
-import com.example.quizapp.services.RoomService;
+import com.example.dormnestapp.model.Room;
+import com.example.dormnestapp.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

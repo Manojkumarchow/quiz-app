@@ -1,10 +1,9 @@
-package com.example.quizapp.controllers;
+package com.example.dormnestapp.controllers;
 
-import com.example.quizapp.model.LoginRequest;
-import com.example.quizapp.session.SessionValidator;
+import com.example.dormnestapp.model.LoginRequest;
+import com.example.dormnestapp.session.SessionValidator;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

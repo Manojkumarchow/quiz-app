@@ -1,6 +1,6 @@
-package com.example.quizapp.controllers;
+package com.example.dormnestapp.controllers;
 
-import com.example.quizapp.services.FileService;
+import com.example.dormnestapp.services.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;

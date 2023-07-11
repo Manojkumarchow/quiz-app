@@ -1,7 +1,7 @@
-package com.example.quizapp.services;
+package com.example.dormnestapp.services;
 
-import com.example.quizapp.dao.RoomDao;
-import com.example.quizapp.model.Room;
+import com.example.dormnestapp.dao.RoomDao;
+import com.example.dormnestapp.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

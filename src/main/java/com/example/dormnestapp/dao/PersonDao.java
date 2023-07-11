@@ -1,7 +1,7 @@
-package com.example.quizapp.dao;
+package com.example.dormnestapp.dao;
 
 
-import com.example.quizapp.model.Person;
+import com.example.dormnestapp.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

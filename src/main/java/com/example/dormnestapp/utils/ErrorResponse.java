@@ -1,4 +1,4 @@
-package com.example.quizapp.utils;
+package com.example.dormnestapp.utils;
 
 import lombok.Data;
 

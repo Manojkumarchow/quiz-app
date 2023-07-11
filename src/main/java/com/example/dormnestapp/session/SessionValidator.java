@@ -1,6 +1,6 @@
-package com.example.quizapp.session;
+package com.example.dormnestapp.session;
 
-import com.example.quizapp.model.LoginRequest;
+import com.example.dormnestapp.model.LoginRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
