@@ -24,7 +24,6 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class FileService {
@@ -141,9 +140,7 @@ public class FileService {
 
     private List<String> getHeaderValues() {
         List<ColumnHeader> columns = columnHeaderDao.findAll();
-        return columns.stream()
-                .map(ColumnHeader::getHeaderValue)
-                .collect(Collectors.toList());
+        return columns.stream().map(ColumnHeader::getHeaderValue).toList();
     }
 
 
@@ -155,7 +152,6 @@ public class FileService {
         try {
             // Save the file to the server
             String fileName = file.getOriginalFilename();
-            System.out.println("File Name : " + fileName);
 
             if (fileName == null)
                 return new ResponseEntity<>("No file uploaded", HttpStatus.BAD_REQUEST);
@@ -175,10 +171,12 @@ public class FileService {
         Path path = Paths.get(fileName);
         Resource resource;
         try {
-            logger.info("File Path: " + fileName);
+
+            logger.info("File Path: {}", fileName);
             resource = new UrlResource(path.toUri());
         } catch (MalformedURLException e) {
-            throw new RuntimeException("File not found", e);
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().build();
         }
 
         HttpHeaders headers = new HttpHeaders();

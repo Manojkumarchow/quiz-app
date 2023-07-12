@@ -109,9 +109,6 @@ public class PersonPDFController {
                     .setMarginTop(40);
             document.add(signature);
 
-            // Close the document
-            document.close();
-
             // Save the PDF to a temporary file
             String tempFileName = "persons.pdf";
             File tempFile = File.createTempFile("temp_", "_" + tempFileName);
