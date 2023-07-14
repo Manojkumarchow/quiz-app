@@ -3,10 +3,16 @@ package com.example.dormnestapp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 @Table(name = "persons")
 @Entity
 @Data
-public class Person {
+public class Person implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 7156526077883281623L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
