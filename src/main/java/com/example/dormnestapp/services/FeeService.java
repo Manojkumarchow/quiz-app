@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -91,9 +90,7 @@ public class FeeService {
             List<Fee> paymentsByPersonId = feeDao.findByPersonId(Long.parseLong(id));
             List<Fee> allPayments = Stream.concat(paymentsByRefId.stream(), paymentsByPersonId.stream()).toList();
 
-            List<FeeBO> dtoList = allPayments.stream()
-                    .map(this::convertFeeToFeeBO)
-                    .collect(Collectors.toList());
+            List<FeeBO> dtoList = allPayments.stream().map(this::convertFeeToFeeBO).toList();
 
             return ResponseEntity.ok(dtoList);
         } catch (NumberFormatException e) {
@@ -238,9 +235,6 @@ public class FeeService {
 
             document.add(date);
             document.add(signature);
-
-            // Close the document
-            document.close();
 
             // Save the PDF to a temporary file
             String tempFileName = "persons.pdf";

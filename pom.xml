@@ -16,8 +16,7 @@
     <description>Hostel Management Application using Spring Boot</description>
     <properties>
         <java.version>17</java.version>
-        <spring-cloud.version>2020.0.3</spring-cloud.version> <!-- Specify a valid version of Spring Cloud -->
-        <!-- <spring-cloud-gcp.version>...</spring-cloud-gcp.version> -->
+        <spring-cloud.version>2020.0.3</spring-cloud.version>
     </properties>
 
     <dependencies>
