@@ -40,4 +40,14 @@ public class PersonService {
 //            return new ResponseEntity<>(null, HttpStatus.OK);
         }
     }
+
+    public ResponseEntity<String> createPerson(Person person) {
+        try {
+            personDao.save(person);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>("Failed to create person record", HttpStatus.BAD_REQUEST);
+    }
 }
