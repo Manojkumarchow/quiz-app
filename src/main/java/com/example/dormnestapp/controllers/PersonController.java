@@ -49,4 +49,9 @@ public class PersonController {
         return personService.getPersonById(id);
     }
 
+    @PostMapping("/create")
+    public ResponseEntity<String> createPerson(@RequestBody Person person) {
+        return personService.createPerson(person);
+    }
+
 }

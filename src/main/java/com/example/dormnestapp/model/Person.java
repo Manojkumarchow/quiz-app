@@ -36,4 +36,7 @@ public class Person implements Serializable {
     @Column(name = "is_active")
     private String isActive;
 
+    @Column(name = "emergency_contact")
+    private String emergencyContact;
+
 }
