@@ -19,7 +19,8 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-          docker build . --file ./Dockerfile --tag manojchow72/spring-app:$(date +%s)
+          IMAGE_TAG=$(date +%s)
+          docker build . --file ./Dockerfile --tag $DOCKER_USER/spring-app:$IMAGE_TAG
 
       - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USER }}/spring-app
+        run: docker push $DOCKER_USER/spring-app:$IMAGE_TAG
