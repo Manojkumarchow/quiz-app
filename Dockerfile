@@ -1,5 +1,5 @@
 # Use the official OpenJDK 17 image as a base image
-FROM adoptopenjdk:17-jdk-hotspot
+FROM amazoncorretto:17-jdk-hotspot
 
 # Set the working directory inside the container
 WORKDIR /app
