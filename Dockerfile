@@ -5,7 +5,7 @@ FROM openjdk:17-oracle
 WORKDIR /app
 
 # Copy the Spring Boot executable JAR file into the container
-COPY target/your-spring-boot-app.jar app.jar
+COPY target/dormnestapp-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port that your Spring Boot application listens on (change 8080 to the port your app uses)
 EXPOSE 8080
