@@ -41,7 +41,7 @@ public class PersonController {
         }
     }
 
-    @Cacheable(value = "persons", key = "#id", unless = "#result.id > 10")
+//    @Cacheable(value = "persons", key = "#id", unless = "#result.id > 10")
     @GetMapping("/{id}")
     public Person getPersonById(@PathVariable long id) {
         personControllerLogger.info("In the getPersonById METHOD");
